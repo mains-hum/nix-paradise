@@ -24,7 +24,14 @@
         size = 10.0;
       };
 
-      terminal.shell.program = "fish";
+      terminal.shell = {
+        program = "${pkgs.fish}/bin/fish";
+        args = [
+          "--login"
+          "-c"
+          "if not set -q TMUX; exec tmux new-session -A -s main; end"
+        ];
+      };
 
       window.opacity = 1;
 

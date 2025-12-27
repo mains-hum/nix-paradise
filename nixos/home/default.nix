@@ -11,6 +11,7 @@
     ./programs/kitty.nix
     ./programs/alacritty.nix
     ./programs/fish.nix
+    ./programs/tmux.nix
     ./packages.nix
     ./img.nix
     ./programs/helix.nix

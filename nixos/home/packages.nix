@@ -70,6 +70,7 @@
     dconf
     gsettings-desktop-schemas
     yazi
+    tmux
     wtype
   ];
 }

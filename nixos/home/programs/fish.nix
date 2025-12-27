@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    wl-clipboard
+  ];
+
   programs.fish = {
     enable = true;
 
@@ -46,6 +50,11 @@
     interactiveShellInit = ''
       set -g fish_greeting ""
       fastfetch
+
+      bind \ch backward-delete-char # Это стандарт, но если tmux перехватит, будет ок
+      bind -e \cj # Отвязываем Ctrl+j
+      bind -e \ck # Отвязываем Ctrl+k
+      bind -e \cl # Отвязываем Ctrl+l
 
       function =
           set -l expr (string join ' ' $argv)
