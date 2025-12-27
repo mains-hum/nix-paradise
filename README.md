@@ -29,7 +29,7 @@
 | Component | Software |
 | :--- | :--- |
 | **Compositor** | `Hyprland` |
-| **Shell** | `Tmux -> Fish` |
+| **Shell** | `Zellij -> NuShell` |
 | **Terminal** | `Alacritty` |
 | **IDE** | `Helix/NFV` |
 | **Bar** | `Waybar` |
@@ -68,7 +68,7 @@
 > mkdir Pictures
 > git clone https://github.com/mains-hum/nix-nord.git
 > cp -r nix-nord/zapret-discord-youtube-linux/ .
-> cd nix-nord/nixos
+> cd ~/nix-nord/nixos
 
 # Copy configuration files
 > sudo rm -rf /etc/nixos/configuration.nix

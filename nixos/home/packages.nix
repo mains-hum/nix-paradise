@@ -70,7 +70,8 @@
     dconf
     gsettings-desktop-schemas
     yazi
-    tmux
+    zellij
+    nushell
     wtype
   ];
 }

@@ -10,8 +10,8 @@
     ./programs/rofi.nix
     ./programs/kitty.nix
     ./programs/alacritty.nix
-    ./programs/fish.nix
-    ./programs/tmux.nix
+    ./programs/zellij.nix
+    ./programs/nushell.nix
     ./packages.nix
     ./img.nix
     ./programs/helix.nix

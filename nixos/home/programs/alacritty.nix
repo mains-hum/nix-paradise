@@ -13,23 +13,21 @@
           family = "JetBrains Mono Nerd Font";
           style = "Bold";
         };
-        italic = {
-          family = "JetBrains Mono Nerd Font";
-          style = "SemiBold Italic";
-        };
-        bold_italic = {
-          family = "JetBrains Mono Nerd Font";
-          style = "Bold Italic";
-        };
         size = 10.0;
       };
 
+      # МОМЕНТАЛЬНЫЙ ЗАПУСК:
+      # Запускаем Zellij первым делом.
+      # Он сам откроет Nushell внутри себя.
       terminal.shell = {
-        program = "${pkgs.fish}/bin/fish";
+        program = "${pkgs.zellij}/bin/zellij";
         args = [
-          "--login"
+          "attach"
           "-c"
-          "if not set -q TMUX; exec tmux new-session -A -s main; end"
+          "main"
+          "options"
+          "--default-shell"
+          "${pkgs.nushell}/bin/nu"
         ];
       };
 
@@ -39,9 +37,6 @@
         style = {
           shape = "Block";
           blinking = "Always";
-        };
-        vi_mode_style = {
-          shape = "Block";
         };
       };
 
@@ -69,10 +64,6 @@
           magenta = "#b48ead";
           cyan = "#8fbcbb";
           white = "#eceff4";
-        };
-        selection = {
-          background = "#4c566a";
-          text = "#eceff4";
         };
       };
 
