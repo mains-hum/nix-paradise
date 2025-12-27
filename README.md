@@ -28,7 +28,7 @@
 
 | Component | Software |
 | :--- | :--- |
-| **Compositor** | `Hyprland` (Wayland) |
+| **Compositor** | `Hyprland` |
 | **Shell** | `Fish` |
 | **Terminal** | `Alacritty` |
 | **IDE** | `Helix/NFV` |
