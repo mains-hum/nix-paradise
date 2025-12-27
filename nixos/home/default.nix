@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   imports = [
     ./programs/waybar.nix
     ./programs/rofi.nix
@@ -12,6 +13,7 @@
     ./programs/fish.nix
     ./packages.nix
     ./img.nix
+    ./programs/helix.nix
     ./programs/gowall.nix
     ./programs/git.nix
     ./programs/theme.nix

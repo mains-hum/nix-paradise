@@ -1,12 +1,17 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
-  mkLiteral = value: value; 
+  mkLiteral = value: value;
 in
 {
   wayland.windowManager.hyprland = {
     enable = true;
-    systemd.enable = true; 
+    systemd.enable = true;
 
     settings = {
       "$bg" = "rgb(242933)";
@@ -50,21 +55,23 @@ in
       };
 
       "exec-once" = [
+        "wl-paste --type text --watch cliphist store"
+        "wl-paste --type image --watch cliphist store"
         "python3 /home/nixos/zapret-discord-youtube-linux/start_zapret.py"
         "$swww & $autoswww & waybar"
       ];
 
       general = {
         gaps_in = 5;
-        gaps_out = 15; 
+        gaps_out = 15;
         border_size = 0;
       };
 
       decoration = {
         rounding = 0;
-        
-        active_opacity = 0.95;   
-        inactive_opacity = 0.85; 
+
+        active_opacity = 0.95;
+        inactive_opacity = 0.85;
         fullscreen_opacity = 1.0;
 
         shadow = {
@@ -77,9 +84,9 @@ in
         blur = {
           enabled = true;
           size = 3;
-          passes = 2; 
+          passes = 2;
           new_optimizations = true;
-          ignore_opacity = true; 
+          ignore_opacity = true;
           noise = 0.05;
           contrast = 0.9;
           brightness = 0.8;
@@ -88,13 +95,13 @@ in
 
       layerrule = [
         "blur, waybar"
-        "ignorezero, waybar" 
+        "ignorezero, waybar"
         "blur, rofi"
         "ignorezero, rofi"
       ];
 
       animations = {
-        enabled = true; 
+        enabled = true;
         bezier = [
           "superfast, 0.05, 0.8, 0.2, 1.05"
           "quick, 0.25, 0.1, 0.25, 1.0"
@@ -104,7 +111,7 @@ in
           "windowsOut, 1, 2.5, quick, slide"
           "windowsMove, 1, 2.5, quick, slide"
           "workspaces, 1, 3, quick, slide"
-          "border, 1, 1, quick" 
+          "border, 1, 1, quick"
           "borderangle, 1, 15, quick, loop"
           "fade, 1, 2, quick"
         ];
@@ -128,6 +135,7 @@ in
         "$mainMod, D, exec, Telegram"
         "ALT SHIFT, S, exec, $screenshot"
         "$mainMod, A, exec, steam"
+        "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
         "SUPER ALT SHIFT, S, exec, systemctl suspend"
         "SUPER ALT SHIFT, Q, exec, poweroff"
         "SUPER ALT SHIFT, R, exec, reboot"
@@ -178,7 +186,7 @@ in
         "$mainMod CTRL, Q, exit"
         "$mainMod CTRL, R, exec, hyprctl reload"
         "$mainMod, G, togglefloating"
-        
+
         ", XF86AudioRaiseVolume, exec, $volum 5%+"
         ", XF86AudioLowerVolume, exec, $volum 5%-"
         ", XF86AudioMute, exec, $mute"

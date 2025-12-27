@@ -31,7 +31,7 @@
 | **Compositor** | `Hyprland` (Wayland) |
 | **Shell** | `Fish` |
 | **Terminal** | `Alacritty` |
-| **Editor** | `Neovim` (NVF Framework) |
+| **IDE** | `Helix/NFV` |
 | **Bar** | `Waybar` |
 | **Launcher** | `Rofi` |
 | **File Manager** | `Yazi` |

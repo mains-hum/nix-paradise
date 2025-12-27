@@ -23,13 +23,15 @@
       cb = "cargo build";
       cr = "cargo run";
       grep = "grep --color=auto";
+      sh = "sudo -E hx";
+      h = "hx";
     };
 
     functions = {
       fish_prompt = {
         body = ''echo "> "'';
       };
-      
+
       fish_command_not_found = {
         body = ''
           if string match -qr '^[0-9+\-*/.^]+$' $argv[1]

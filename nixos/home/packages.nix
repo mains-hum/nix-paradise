@@ -4,7 +4,8 @@
   lib,
   nvf,
   ...
-}: {
+}:
+{
   home.packages = with pkgs; [
     #Rust
     rustc
@@ -47,7 +48,7 @@
     wpgtk
     nwg-look
     gowall
-    ffmpeg 
+    ffmpeg
     kitty
     fish
     neovim
@@ -64,11 +65,12 @@
     wl-clipboard
     lsd
     zoxide
+    cliphist
+    helix
     dconf
     gsettings-desktop-schemas
     yazi
-    nemo
-    wtype 
+    wtype
     discord
   ];
 }
