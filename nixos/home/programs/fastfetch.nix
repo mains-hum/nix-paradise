@@ -39,10 +39,6 @@
           format = "";
         }
         {
-          type = "custom";
-          format = "";
-        }
-        {
           type = "title";
           format = " {#35} {#39}{user-name}";
         }
@@ -73,6 +69,10 @@
         {
           key = " {#35}󱂬 wm  ";
           type = "wm";
+        }
+        {
+          key = " {#31}󰋊 dsk ";
+          type = "disk";
         }
         {
           key = " {#32} ram ";

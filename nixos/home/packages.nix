@@ -53,6 +53,7 @@
     telegram-desktop
     steam
     mpv
+    zapret
     pavucontrol
     playerctl
     cava
