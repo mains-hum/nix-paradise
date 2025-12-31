@@ -22,6 +22,7 @@
     clang-tools
     cmake
     gnumake
+    binutils
 
     #Pascal
     fpc
@@ -74,5 +75,9 @@
     bottom
     dust
     joshuto
+    qbittorrent
+    qtox
+    wine
+    steam-run
   ];
 }

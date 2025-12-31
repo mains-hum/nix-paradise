@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   imports = [
     ./hardware-configuration.nix
     ./modules/nvidia.nix
@@ -25,7 +26,10 @@
   nix = {
     package = pkgs.nix;
     settings = {
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       auto-optimise-store = true;
     };
 
@@ -46,7 +50,13 @@
   users.users.nixos = {
     isNormalUser = true;
     description = "nixos";
-    extraGroups = ["networkmanager" "wheel" "video" "audio" "storage"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "video"
+      "audio"
+      "storage"
+    ];
   };
 
   services.displayManager.autoLogin.enable = true;
@@ -54,13 +64,17 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
-  security.sudo.extraRules = [{
-    users = [ "nixos" ];
-    commands = [{
-      command = "/run/current-system/sw/bin/bash /home/nixos/zapret-discord-youtube-linux/main_script.sh";
-      options = [ "NOPASSWD" ];
-    }];
-  }];
+  security.sudo.extraRules = [
+    {
+      users = [ "nixos" ];
+      commands = [
+        {
+          command = "/run/current-system/sw/bin/bash /home/nixos/zapret-discord-youtube-linux/main_script.sh";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
 
   services.flatpak.enable = true;
   services.gvfs.enable = true;

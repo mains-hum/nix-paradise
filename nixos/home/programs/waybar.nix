@@ -1,24 +1,36 @@
-{ config, pkgs, ... }: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+
+{
   programs.waybar = {
     enable = true;
 
-    settings = {
+    settings = lib.mkForce {
       mainBar = {
         layer = "top";
-        position = "left";
-        width = 50;
-        spacing = 0;
-        margin-top = 15;
-        margin-bottom = 15;
-        margin-left = 15;
-        margin-right = 10;
+        position = "top";
+        height = 30;
+        exclusive = true;
+        passthrough = false;
+        gtk-layer-shell = true;
 
-        modules-left = [ "hyprland/workspaces" ];
+        margin-top = 8;
+        margin-left = 15;
+        margin-right = 15;
+        spacing = 0;
+
+        modules-left = [
+          "hyprland/workspaces"
+        ];
         modules-center = [ "hyprland/window" ];
         modules-right = [
-          "hyprland/language"
           "pulseaudio"
           "memory"
+          "hyprland/language"
           "clock"
           "tray"
         ];
@@ -36,39 +48,44 @@
           format = "{}";
           format-en = "EN";
           format-ru = "RU";
+          min-length = 3;
         };
 
         "hyprland/window" = {
-          format = "{class}";
-          rotate = 90;
+          format = "{}";
+          max-length = 40;
+          separate-outputs = true;
         };
 
         "clock" = {
-          format = "{:%H\n%M}";
-          interval = 1;
+          format = "{:%H:%M | %d.%m.%y}";
+          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         };
 
         "memory" = {
-          format = "RAM\n{used:0.1f}";
+          format = "RAM {used:0.1f}G";
+          interval = 10;
         };
 
         "pulseaudio" = {
-          format = "VOL\n{volume}%";
+          format = "VOL {volume}%";
+          format-muted = "MUTED";
+          on-click = "pavucontrol";
         };
 
         "tray" = {
-          icon-size = 18;
+          icon-size = 15;
           spacing = 10;
         };
       };
     };
 
-    style = ''
+    style = lib.mkForce ''
       @define-color background #242933;
       @define-color foreground #eceff4;
       @define-color cyan       #88c0d0;
+      @define-color purple     #b48ead;
       @define-color blue       #81a1c1;
-      @define-color magenta    #b48ead;
       @define-color green      #a3be8c;
       @define-color yellow     #ebcb8b;
 
@@ -76,66 +93,67 @@
         border: none;
         border-radius: 0;
         font-family: "JetBrainsMono Nerd Font", sans-serif;
-        font-size: 14px;
-        color: @foreground;
-        transition: all 0.2s ease;
+        font-size: 13px;
+        min-height: 0;
+        font-weight: bold;
       }
 
       window#waybar {
         background-color: rgba(36, 41, 51, 0.9);
-        color: @foreground;
-        border-radius: 3px;
-        box-shadow: 0 0 7px 2px rgba(26, 26, 26, 0.93);
-        margin: 5px;
+        border-radius: 10px;
       }
 
-      #workspaces {
-        margin-top: 5px;
+      window#waybar > box {
+        margin: 0;
       }
 
       #workspaces button {
+        padding: 0 10px;
         color: @foreground;
-        padding: 2px 0;
+        margin: 4px 2px;
+        border-radius: 5px;
+        transition: all 0.2s ease;
+        font-weight: bold;
       }
 
       #workspaces button.active {
-        background: transparent;
         color: @cyan;
-        font-size: 18px;
-        font-weight: 900;
+        background: rgba(136, 192, 208, 0.15);
+      }
+
+      #workspaces button:hover {
+        background: rgba(136, 192, 208, 0.1);
       }
 
       #clock, #memory, #pulseaudio, #language, #tray, #window {
-        padding: 8px 0;
+        padding: 0 12px;
+        margin: 4px 2px;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      #window { 
+        color: @cyan; 
       }
 
       #clock { 
-        color: @magenta; 
-        font-size: 16px; 
-        font-weight: bold; 
+        color: @purple; 
       }
-      
+
       #language { 
         color: @blue; 
-        font-weight: bold; 
       }
-      
+
       #memory { 
         color: @green; 
-        font-weight: bold; 
       }
-      
+
       #pulseaudio { 
         color: @yellow; 
-        font-weight: bold; 
-      }
-      
-      #window { 
-        font-weight: bold; 
       }
 
       #tray { 
-        margin-bottom: 8px; 
+        margin-right: 5px; 
       }
     '';
   };
