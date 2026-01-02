@@ -24,12 +24,12 @@ in
 
     theme = {
       "*" = {
-        bg0 = mkLiteral "#242933";
-        bg1 = mkLiteral "#3b4252";
-        fg0 = mkLiteral "#eceff4";
-        accent = mkLiteral "#88c0d0";
-        blue = mkLiteral "#81a1c1";
-        
+        bg0 = mkLiteral "#151515";
+        bg1 = mkLiteral "#1f1f1f";
+        fg0 = mkLiteral "#E8E3E3";
+        accent = mkLiteral "#D9BC8C";
+        blue = mkLiteral "#8DA3B9";
+
         background-color = mkLiteral "transparent";
         text-color = mkLiteral "@fg0";
         font = "JetBrainsMono Nerd Font 12";
@@ -38,36 +38,44 @@ in
       "window" = {
         width = mkLiteral "700px";
         height = mkLiteral "500px";
-        border = mkLiteral "0px";
-        border-radius = mkLiteral "3px";
-        background-color = mkLiteral "rgba(36, 41, 51, 0.93)";
+        border = mkLiteral "2px";
+        border-color = mkLiteral "@accent";
+        border-radius = mkLiteral "10px";
+        background-color = mkLiteral "rgba(21, 21, 21, 0.95)";
       };
 
       "mainbox" = {
         padding = mkLiteral "20px";
-        children = map mkLiteral [ "inputbar" "listview" "mode-switcher" ];
+        children = map mkLiteral [
+          "inputbar"
+          "listview"
+          "mode-switcher"
+        ];
       };
 
       "inputbar" = {
-        background-color = mkLiteral "rgba(59, 66, 82, 0.7)";
-        border-radius = mkLiteral "3px";
+        background-color = mkLiteral "rgba(31, 31, 31, 0.8)";
+        border-radius = mkLiteral "6px";
         margin = mkLiteral "0px 0px 15px 0px";
         padding = mkLiteral "5px";
-        children = map mkLiteral [ "prompt" "entry" ];
+        children = map mkLiteral [
+          "prompt"
+          "entry"
+        ];
       };
 
       "prompt" = {
         background-color = mkLiteral "@accent";
         padding = mkLiteral "10px 15px";
         text-color = mkLiteral "@bg0";
-        border-radius = mkLiteral "3px";
+        border-radius = mkLiteral "6px";
         font = "JetBrainsMono Nerd Font Bold 12";
       };
 
       "entry" = {
         padding = mkLiteral "10px";
         placeholder = "Search apps...";
-        placeholder-color = mkLiteral "rgba(236, 239, 244, 0.2)";
+        placeholder-color = mkLiteral "rgba(232, 227, 227, 0.2)";
       };
 
       "listview" = {
@@ -80,12 +88,12 @@ in
 
       "element" = {
         padding = mkLiteral "10px";
-        border-radius = mkLiteral "3px";
+        border-radius = mkLiteral "6px";
         background-color = mkLiteral "transparent";
       };
 
       "element selected" = {
-        background-color = mkLiteral "rgba(136, 192, 208, 0.2)";
+        background-color = mkLiteral "rgba(217, 188, 140, 0.15)";
         text-color = mkLiteral "@accent";
       };
 
@@ -107,9 +115,9 @@ in
 
       "button" = {
         padding = mkLiteral "10px";
-        background-color = mkLiteral "rgba(59, 66, 82, 0.5)";
+        background-color = mkLiteral "rgba(31, 31, 31, 0.5)";
         text-color = mkLiteral "@blue";
-        border-radius = mkLiteral "3px";
+        border-radius = mkLiteral "6px";
       };
 
       "button selected" = {

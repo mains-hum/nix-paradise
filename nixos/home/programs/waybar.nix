@@ -23,9 +23,7 @@
         margin-right = 15;
         spacing = 0;
 
-        modules-left = [
-          "hyprland/workspaces"
-        ];
+        modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "hyprland/window" ];
         modules-right = [
           "pulseaudio"
@@ -58,7 +56,8 @@
         };
 
         "clock" = {
-          format = "{:%H:%M | %d.%m.%y}";
+          format = "{:%H:%M:%S | %d.%m.%y}";
+          interval = 1;
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         };
 
@@ -81,13 +80,10 @@
     };
 
     style = lib.mkForce ''
-      @define-color background #242933;
-      @define-color foreground #eceff4;
-      @define-color cyan       #88c0d0;
-      @define-color purple     #b48ead;
-      @define-color blue       #81a1c1;
-      @define-color green      #a3be8c;
-      @define-color yellow     #ebcb8b;
+      @define-color background #151515;
+      @define-color foreground #E8E3E3;
+      @define-color selection  #424242;
+      @define-color accent     #D9BC8C;
 
       * {
         border: none;
@@ -99,7 +95,7 @@
       }
 
       window#waybar {
-        background-color: rgba(36, 41, 51, 0.9);
+        background-color: rgba(21, 21, 21, 0.9);
         border-radius: 10px;
       }
 
@@ -109,51 +105,41 @@
 
       #workspaces button {
         padding: 0 10px;
-        color: @foreground;
+        color: rgba(232, 227, 227, 0.4); 
         margin: 4px 2px;
-        border-radius: 5px;
+        border-radius: 6px;
         transition: all 0.2s ease;
-        font-weight: bold;
       }
 
       #workspaces button.active {
-        color: @cyan;
-        background: rgba(136, 192, 208, 0.15);
+        color: @foreground;
+        background: rgba(232, 227, 227, 0.1); 
       }
 
       #workspaces button:hover {
-        background: rgba(136, 192, 208, 0.1);
+        background: rgba(232, 227, 227, 0.05);
+        color: @foreground;
       }
 
       #clock, #memory, #pulseaudio, #language, #tray, #window {
         padding: 0 12px;
         margin: 4px 2px;
-        border-radius: 5px;
-        font-weight: bold;
+        color: @foreground; 
+        border-radius: 6px;
       }
 
       #window { 
-        color: @cyan; 
-      }
-
-      #clock { 
-        color: @purple; 
-      }
-
-      #language { 
-        color: @blue; 
-      }
-
-      #memory { 
-        color: @green; 
-      }
-
-      #pulseaudio { 
-        color: @yellow; 
+        color: @foreground;
+        font-weight: normal;
+        opacity: 0.8;
       }
 
       #tray { 
-        margin-right: 5px; 
+        margin-right: 8px;
+      }
+
+      #clock:hover, #memory:hover, #pulseaudio:hover, #language:hover {
+        background: rgba(232, 227, 227, 0.05);
       }
     '';
   };

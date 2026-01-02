@@ -4,7 +4,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "nord_transparent";
+      theme = "paradise_transparent";
 
       editor = {
         line-number = "relative";
@@ -76,9 +76,32 @@
     };
   };
 
-  xdg.configFile."helix/themes/nord_transparent.toml".text = ''
-    inherits = "nord"
+  xdg.configFile."helix/themes/paradise_transparent.toml".text = ''
+    inherits = "gruvbox"
+
     "ui.background" = { }
-    "ui.virtual.indent-guide" = { fg = "selection" }
+    "ui.text" = "#e8e8e8"
+    "ui.cursor" = { fg = "#151515", bg = "#e8e8e8" }
+    "ui.selection" = { bg = "#424242" }
+    "ui.statusline" = { fg = "#e8e8e8", bg = "#1f1f1f" }
+    "ui.virtual.indent-guide" = { fg = "#424242" }
+    "ui.window" = { fg = "#424242" }
+    "ui.help" = { fg = "#e8e8e8", bg = "#1f1f1f" }
+
+    "variable" = "#e8e8e8"
+    "constant" = "#a988b0"
+    "comment" = "#424242"
+    "string" = "#8c9440"
+    "type" = "#d9bc83"
+    "function" = "#8da1b9"
+    "keyword" = "#b66467"
+    "operator" = "#8abeb7"
+    "punctuation" = "#e8e8e8"
+
+    "diagnostic" = { modifiers = ["underlined"] }
+    "info" = "#8da1b9"
+    "hint" = "#8abeb7"
+    "warning" = "#d9bc83"
+    "error" = "#b66467"
   '';
 }

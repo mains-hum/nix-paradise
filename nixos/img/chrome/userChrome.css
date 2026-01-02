@@ -1,19 +1,19 @@
 :root {
-    --window-colour:               #242933; 
-    --secondary-colour:            #2f3542; 
-    --inverted-colour:             #eceff4; 
+    --window-colour:               #151515; 
+    --secondary-colour:            #1f1f1f; 
+    --inverted-colour:             #E8E3E3; 
 
-    --uc-identity-color-blue:      #81a1c1;
-    --uc-identity-color-turquoise: #88c0d0;
-    --uc-identity-color-green:     #a3be8c;
-    --uc-identity-color-yellow:    #ebcb8b;
-    --uc-identity-color-orange:    #d08770;
-    --uc-identity-color-red:       #bf616a;
-    --uc-identity-color-pink:      #b48ead;
-    --uc-identity-color-purple:    #b48ead;
+    --uc-identity-color-blue:      #8DA3B9; 
+    --uc-identity-color-turquoise: #8AA6A2; 
+    --uc-identity-color-green:     #8C977D; 
+    --uc-identity-color-yellow:    #D9BC8C; 
+    --uc-identity-color-orange:    #D9BC8C; 
+    --uc-identity-color-red:       #B66467; 
+    --uc-identity-color-pink:      #A988B0; 
+    --uc-identity-color-purple:    #A988B0;
      
     --urlbar-popup-url-color: var(--uc-identity-color-blue) !important;
-    --uc-border-radius: 3px; 
+    --uc-border-radius: 6px; 
     --uc-urlbar-width: clamp(250px, 50vw, 600px);
     --uc-active-tab-width:   clamp(50px, 18vw, 220px);
     --uc-inactive-tab-width: clamp(50px, 15vw, 200px);
@@ -58,12 +58,12 @@
     --lwt-sidebar-background-color:             var(--uc-hover-colour)    !important;
     --lwt-sidebar-text-color:                   var(--uc-inverted-colour) !important;
   
-    --arrowpanel-border-color:                  var(--uc-theme-colour)    !important;
+    --arrowpanel-border-color:                  #424242                   !important;
     --arrowpanel-border-radius:                  var(--uc-border-radius)   !important;
     --arrowpanel-background:                    var(--uc-theme-colour)    !important;
     --arrowpanel-color:                         var(--inverted-colour)    !important;
 
-    --autocomplete-popup-highlight-background:  var(--uc-inverted-colour) !important;
+    --autocomplete-popup-highlight-background:  var(--uc-identity-color-yellow) !important;
     --autocomplete-popup-highlight-color:        var(--uc-theme-colour)    !important;
     --autocomplete-popup-hover-background:       var(--uc-hover-colour)    !important;
 
@@ -83,7 +83,7 @@ window, #main-window, #toolbar-menubar, #TabsToolbar, #PersonalToolbar,
 }
 
 #PersonalToolbar toolbarbutton:not(:hover),
-#bookmarks-toolbar-button:not(:hover) { filter: grayscale(1) !important; }
+#bookmarks-toolbar-button:not(:hover) { filter: grayscale(1) !important; opacity: 0.7; }
 
 .tabbrowser-tab > .tab-stack > .tab-background { 
     box-shadow: none !important;
@@ -96,7 +96,7 @@ window, #main-window, #toolbar-menubar, #TabsToolbar, #PersonalToolbar,
 }
 
 .tabbrowser-tab[selected] .tab-context-line {
-    background-color: var(--uc-identity-color-turquoise) !important;
+    background-color: var(--uc-identity-color-yellow) !important;
     height: 2px !important;
 }
 
@@ -107,11 +107,11 @@ window, #main-window, #toolbar-menubar, #TabsToolbar, #PersonalToolbar,
 }
 
 #urlbar-background { 
-    border: 1px solid var(--secondary-colour) !important; 
+    border: 1px solid #424242 !important; 
 }
 
 #urlbar[focused="true"] > #urlbar-background {
-    border: 1px solid var(--uc-identity-color-turquoise) !important;
+    border: 1px solid var(--uc-identity-color-yellow) !important;
 }
 
 @media (min-width: 1000px) { 

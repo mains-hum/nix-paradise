@@ -14,15 +14,15 @@ in
     systemd.enable = true;
 
     settings = {
-      "$bg" = "rgb(242933)";
-      "$fg" = "rgb(eceff4)";
-      "$red" = "rgb(bf616a)";
-      "$green" = "rgb(a3be8c)";
-      "$yellow" = "rgb(ebcb8b)";
-      "$blue" = "rgb(81a1c1)";
-      "$magenta" = "rgb(b48ead)";
-      "$cyan" = "rgb(88c0d0)";
-      "$selection" = "rgb(4c566a)";
+      "$bg" = "rgb(151515)";
+      "$fg" = "rgb(E8E3E3)";
+      "$red" = "rgb(B66467)";
+      "$green" = "rgb(8C977D)";
+      "$yellow" = "rgb(D9BC8C)";
+      "$blue" = "rgb(8DA3B9)";
+      "$magenta" = "rgb(A988B0)";
+      "$cyan" = "rgb(8AA6A2)";
+      "$selection" = "rgb(424242)";
 
       "$mainMod" = "MOD3";
       "$screenshot" = "grim -g \"$(slurp)\" ~/Pictures/screenshot.png";
@@ -69,16 +69,12 @@ in
 
       decoration = {
         rounding = 10;
-
         active_opacity = 0.95;
         inactive_opacity = 0.85;
         fullscreen_opacity = 1.0;
 
         shadow = {
-          enabled = true;
-          range = 0;
-          render_power = 0;
-          color = "rgba(1a1a1aee)";
+          enabled = false;
         };
 
         blur = {
@@ -92,13 +88,6 @@ in
           brightness = 0.8;
         };
       };
-
-      layerrule = [
-        "blur, waybar"
-        "ignorezero, waybar"
-        "blur, rofi"
-        "ignorezero, rofi"
-      ];
 
       animations = {
         enabled = true;

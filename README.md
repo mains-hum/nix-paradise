@@ -1,7 +1,7 @@
 <div align="center">
 
 # :herb: [mains-hum] / nix-nord
-`Hello, I am mains-hum. Simple dotfile with gtk theme - nord, NixOS Hyprland.`
+`Simple dotfile with gtk theme - paradise, NixOS Hyprland.`
 
 <p align="center">
   <img src="https://img.shields.io/github/repo-size/mains-hum/nix-tokyonight?style=for-the-badge&logo=github&color=81a1c1&logoColor=white" alt="Repo Size" />
@@ -66,8 +66,8 @@
 
 # Clone this repository
 > mkdir Pictures
-> git clone https://github.com/mains-hum/nix-nord.git
-> cd ~/nix-nord/nixos
+> git clone https://github.com/mains-hum/nix-paradise.git
+> cd ~/nix-paradise/nixos
 
 # Copy configuration files
 > sudo rm -rf /etc/nixos/configuration.nix
