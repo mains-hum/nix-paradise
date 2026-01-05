@@ -1,6 +1,6 @@
 <div align="center">
 
-# :herb: [mains-hum] / nix-nord
+# :herb: [mains-hum] / nix-paradise
 `Simple dotfile with gtk theme - paradise, NixOS Hyprland.`
 
 <p align="center">
